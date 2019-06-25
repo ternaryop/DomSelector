@@ -10,6 +10,10 @@ android {
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
+
+        // fix the error "More than one file was found with OS independent path 'META-INF/library_release.kotlin_module'"
+        // when used inside the app
+        kotlinOptions.freeCompilerArgs += ['-module-name', "${rootProject.ext.publishPackage.groupId}.${rootProject.ext.publishPackage.artifactId}"]
     }
 
     defaultConfig {
@@ -47,8 +51,8 @@ dependencies {
 
     api "org.jsoup:jsoup:${rootProject.ext.jsoupLibVersion}"
 
-    api "com.ternaryop.photoshelf:api:${rootProject.ext.photoShelfapi}"
-    api "com.ternaryop:utils:${rootProject.ext.ternaryUtilLibVersion}"
+    api "com.ternaryop.photoshelf:api:${rootProject.ext.ternaryOpPhotoShelfApi}"
+    api "com.ternaryop:utils:${rootProject.ext.ternaryOpUtilLibVersion}"
 
     testImplementation "junit:junit:${junitLibVersion}"
     androidTestImplementation "androidx.test:runner:${androidXTestRunner}"

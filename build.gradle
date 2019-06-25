@@ -26,8 +26,8 @@ buildscript {
 
         junitLibVersion = '4.13-beta-3'
 
-        ternaryUtilLibVersion = '1.4.3'
-        photoShelfapi = '1.0.0'
+        ternaryOpUtilLibVersion = '1.4.4'
+        ternaryOpPhotoShelfApi = '1.0.1'
 
         androidXEspressoCoreLibVersion = '3.2.0'
         androidXTestRunner = '1.2.0'
@@ -36,7 +36,7 @@ buildscript {
     }
 
     ext.publishPackage = [
-        version: '1.0.0',
+        version: '1.0.1',
         groupId: 'com.ternaryop.photoshelf',
         artifactId: 'domselector',
         bintrayRepoName: 'DomSelector',
